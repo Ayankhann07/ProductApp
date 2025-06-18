@@ -17,7 +17,6 @@ import { useIsFocused } from '@react-navigation/native';
 import { Keyboard, TouchableWithoutFeedback, TextInput } from 'react-native';
 
 
-
 export default function HomeScreen({onLogout}) {
   const navigation = useNavigation();
   const [products, setProducts] = useState([]);

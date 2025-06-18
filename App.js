@@ -24,7 +24,7 @@ export default function App() {
     setIsLoggedIn(false);
   };
 
-  if (isLoggedIn === null) return null; // loading indicator can be added here
+  if (isLoggedIn === null) return null; 
 
   return (
     <NavigationContainer>

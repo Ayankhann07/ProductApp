@@ -19,13 +19,13 @@ export default function AddProductScreen() {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
-  const [discription, SetDiscription] = useState('');
+  //const [discription, SetDiscription] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [loading, setLoading] = useState(false);
   
 
   const handleAddProduct = async () => {
-  if (!name || !price || !discription || !selectedCategory) {
+  if (!name || !price  || !selectedCategory) {
     Alert.alert('Validation', 'Please enter all fields and select category.');
     return;
   }
@@ -49,7 +49,7 @@ export default function AddProductScreen() {
     const newProduct = {
       name: name.trim(),
       price: price.trim(),
-      discription: discription.trim(),
+      //discription: discription.trim(),
       image: image.trim() || 'https://via.placeholder.com/150',
       category: selectedCategory, 
     };
@@ -118,12 +118,12 @@ const pickImageFromDevice = () => {
         style={styles.input}
       />
 
-      <TextInput
+      {/* <TextInput
         placeholder='Discription'
         value={discription}
         onChangeText={SetDiscription}
         style={styles.input}
-      />
+      /> */}
       <TextInput
         placeholder="Image URL (optional)"
         value={image}
@@ -145,7 +145,6 @@ const pickImageFromDevice = () => {
         <Text style={{ color: '#000' }}>📁 Pick Image from Device</Text>
         </TouchableOpacity>
 
-      {/* 👉 Move Picker below Image URL */}
 <View style={styles.pickerContainer}>
   <Text style={{ marginBottom: 5, fontWeight: 'bold' }}>Select Category:</Text>
   <View style={styles.pickerWrapper}>
@@ -168,11 +167,7 @@ const pickImageFromDevice = () => {
           <Text style={styles.buttonText}>Add Product</Text>
         </TouchableOpacity>
       )}
-      {/* <Picker.Item label="-- Select Category --" value="" />
-<Picker.Item label="Product" value="product" />
-<Picker.Item label="Accessory" value="accessory" /> */}
-
-
+      
     </View>
   );
 }
